@@ -1,0 +1,29 @@
+{
+  "name": "clickit",
+  "version": "1.0.0",
+  "description": "Clickit.js is a simple library. Implements the process of \"rewriting the class attribute when clicked\".",
+  "main": "clickit.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "run-s js:clickit js:copy",
+    "js:clickit": "uglifyjs ./src/clickit.js -o ./clickit.js",
+    "js:copy": "cpx \"./clickit.js\" ./docs/js/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webbingstudio/clickit-js.git"
+  },
+  "author": "WebbingStudio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webbingstudio/clickit-js/issues"
+  },
+  "homepage": "https://github.com/webbingstudio/clickit-js#readme",
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "npm-run-all": "^4.1.5",
+    "uglify-js": "^3.17.3"
+  }
+}
