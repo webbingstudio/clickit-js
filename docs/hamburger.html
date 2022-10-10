@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Clickit.js</title>
+
+    <link rel="stylesheet" href="https://echocss.webbingstudio.com/css/echo.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div id="echo-document">
+
+    <header class="echo-p-header" role="banner">
+        <div class="echo-container">
+
+            <h1 class="echo-title echo-title-style-b echo-title-level-2">clickit.js</h1>
+
+        </div><!-- /.echo-container -->
+    </header><!-- /.echo-p-header -->
+
+    <main class="echo-p-main" role="main">
+        <div class="echo-container echo-container-xs">
+            <h2 class="echo-title echo-title-style-d echo-title-level-5 echo-margin-bottom-lg">ハンバーガーメニュー</h2>
+
+            <div class="echo-body">
+                <p>いわゆる「ハンバーガーメニュー」は、以下のような仕様を求められます。</p>
+                <ul>
+                    <li>左・右・下など、ドキュメント内の複数箇所に設置する</li>
+                    <li>開いたときとは異なる要素（ボタン等）でも閉じることができる</li>
+                    <li>複数回クリックしても暴走しないようにする</li>
+                </ul>
+            </div>
+
+            <h3 class="echo-title echo-title-style-a echo-title-level-6 echo-margin-top-lg echo-margin-bottom-md">sync</h3>
+
+            <p>インスタンスを作成する際に<code>sync</code>プロパティにセレクタが指定されていれば、<code>trigger</code>プロパティで指定した、発火元の要素と同じ動作をする<strong>エイリアス</strong>として扱います。</p>
+
+            <p>エイリアスは複数指定ができます。セレクタが<code>.sample</code>であれば、ドキュメント内でこのクラスが付与されたすべての要素がエイリアスとなります。</p>
+
+            <p>エイリアスは、トリガーとなる要素に、<code>data-clickit-sync</code>属性の値としてセレクタを記述することでも指定できます。<br>
+            （<code>sync</code>プロパティと同時に指定されていた場合は、<code>data-clickit-sync</code>属性を優先します）</p>
+
+            <p>このサンプルの左上のメニューでは、展開後のメニューの下にある「閉じる」ボタンがエイリアスとなっています。<br>
+                閉じるボタンをクリックすると、トグルボタンが ≡ から × に戻ることを確認してください。</p>
+    
+            <p>このサンプルの右上のメニューでは、展開後のメニューの背景と「閉じる」ボタンの2箇所がエイリアスとなっています。<br>
+            背景とボタンのどちらをクリックしても、右上のトグルボタンが ≡ から × に戻ることを確認してください。</p>
+
+            <h3 class="echo-title echo-title-style-a echo-title-level-6 echo-margin-top-lg echo-margin-bottom-md">openDelay, closeDelay</h3>
+
+            <p>開くときと閉じるときで待機時間を変えることもできます。右のメニューは開閉にかかる時間が異なることを確認してください。</p>
+    
+        </div><!-- /.echo-container -->
+
+
+            <div class="hamburger-header echo-p-header echo-bg-default echo-bg-fade">
+                <div class="echo-container">
+                    <div class="echo-p-header-contents">
+                        <div class="hamburger-header-menu echo-p-header-menu">
+                            <button class="js-hamburger-left echo-toggle" aria-controls="hamburger01"><span class="echo-toggle-line"></span><span class="echo-sr">メニューを開く</span></button>
+                        </div><!-- /.echo-p-header-menu -->
+                        <p class="echo-p-header-title">ヘッダ</p>
+                        <div class="hamburger-header-menu echo-p-header-menu">
+                            <button class="js-hamburger-right echo-toggle" aria-controls="hamburger02" data-clickit-sync=".js-hamburger-right-close"><span class="echo-toggle-line"></span><span class="echo-sr">メニュー2を開く</span></button>
+                        </div><!-- /.echo-p-header-menu -->
+                    </div><!-- /.echo-p-header-contents -->
+                </div><!-- /.echo-container -->
+            </div><!-- /.echo-p-header -->
+
+        <div class="echo-container echo-container-xs">
+
+
+            <div class="echo-buttons echo-margin-top-xl">
+
+                <div class="echo-buttons-item">
+                    <a href="./" class="echo-button echo-button-style-b echo-button-icon-arrow echo-button-icon-left">戻る</a>
+                </div><!-- /.echo-buttons-item -->
+
+            </div><!-- /.echo-buttons -->
+            
+        </div><!-- /.echo-container -->
+    </main><!-- /.echo-p-main -->
+
+<div id="hamburger01" class="hamburger-overlay echo-overlay echo-overlay-inverse" aria-hidden="true">
+    <div class="echo-overlay-bg"></div>
+    <div class="echo-overlay-contents">
+
+        <div class="echo-padding-sm echo-bg-default">
+            <p class="echo-title echo-title-style-b echo-title-level-5">メニュー</p>
+        </div>
+
+        <nav class="echo-nav echo-nav-inverse echo-nav-lg echo-nav-vertical">
+            <ul class="echo-nav-list">
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+            </ul>
+        </nav>
+
+        <div class="echo-text-center echo-margin-top-xl">
+            <button class="js-hamburger-left-close echo-button echo-button-style-c">閉じる</button>
+        </div>
+
+    </div><!-- /.echo-overlay-contents -->
+</div><!-- /.echo-overlay -->
+
+
+<div id="hamburger02" class="hamburger-overlay echo-overlay echo-overlay-inverse" aria-hidden="true">
+    <div class="echo-overlay-bg js-hamburger-right-close"></div>
+    <div class="echo-overlay-contents">
+
+        <div class="echo-padding-sm echo-bg-default">
+            <p class="echo-title echo-title-style-b echo-title-level-5">メニュー</p>
+        </div>
+
+        <nav class="echo-nav echo-nav-inverse echo-nav-lg echo-nav-vertical">
+            <ul class="echo-nav-list">
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+                <li class="echo-nav-item"><a href="#" class="echo-nav-label">ナビゲーション</a></li>
+            </ul>
+        </nav>
+
+        <div class="echo-text-center echo-margin-top-xl">
+            <button class="js-hamburger-right-close echo-button echo-button-style-c">閉じる</button>
+        </div>
+
+    </div><!-- /.echo-overlay-contents -->
+</div><!-- /.echo-overlay -->
+
+</div><!-- /.echo-document -->
+<script src="/js/bundle.js"></script>
+</body>
+</html>

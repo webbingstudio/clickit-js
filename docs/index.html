@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Clickit.js</title>
+
+    <link rel="stylesheet" href="https://echocss.webbingstudio.com/css/echo.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./prism/prism.css">
+</head>
+<body>
+<div id="echo-document">
+
+    <header class="header echo-p-header" role="banner">
+        <div class="echo-container">
+            <div class="echo-p-header-contents">
+                <h1 class="echo-p-header-title echo-title echo-title-level-4">Clickit.js</h1>
+                <div class="header-menu echo-p-header-menu">
+                    <button class="js-drawer echo-toggle echo-toggle-inverse" aria-controls="globalnav" data-clickit-sync=".js-drawer-close"><span class="echo-toggle-line"></span><span class="echo-sr">Menu</span></button>
+                </div><!-- /.echo-p-header-menu -->
+            </div><!-- /.echo-p-header-contents -->
+        </div><!-- /.echo-container -->
+    </header><!-- /.echo-p-header -->
+
+    <main class="echo-p-main" role="main">
+
+        <section class="home-popup echo-padding-y-xl">
+            <div class="echo-container echo-container-xs">
+                <div class="echo-buttons">
+                    <div class="echo-buttons-item">
+                        <button class="js-clickit echo-button echo-button-circle" aria-controls="popup01">Click it!</button>
+                    </div><!-- /.echo-buttons-item -->
+                </div><!-- /.echo-buttons -->
+                <div id="popup01" class="echo-box echo-box-style-a">
+                    <p class="echo-text-center echo-text-xl">
+                        <strong class="echo-text-xltoxxl">Yo, Ho!</strong><br>
+                        Click the button again to hide me!</p>
+                </div>
+
+                <div class="echo-body echo-text-lg echo-margin-top-lg">
+                    <p class="echo-text-center echo-line-lg"><strong>Clickit.js</strong> is a simple library.<br>Implements the process of "rewriting the class attribute when clicked".</p>
+                    <p class="echo-text-center echo-line-lg"><strong>Clickit.js</strong><span class="echo-text-xs">（クリックイットジェーエス）</span>は<br>「クリックするとclass属性を書き換える」処理を実装できる<br>シンプルなライブラリです。</p>
+
+                    <ul class="home-popup-list">
+                        <li>Native JavaScript (Vanilla JS)</li>
+                        <li>WAI-ARIA support</li>
+                        <li>no webpack needed</li>
+                    </ul>
+
+                </div>
+
+                <p class="echo-text-center echo-text-xxl echo-margin-top-xl">Version 1.0.0</p>
+
+                <p class="echo-text-center">
+                    <a href="#" target="_blank" class="echo-button echo-button-xxl echo-button-style-a">
+                        <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                        <span class="echo-margin-left-sm">GitHub</span>
+                    </a>
+                </p>
+
+            </div><!-- /.echo-container -->
+        </section><!-- /.home-popup -->
+
+        <section id="quickstart" class="home-quickstart echo-padding-y-xl">
+            <div class="echo-container echo-container-sm">
+                <h2 class="echo-title echo-title-style-b echo-title-level-2 echo-margin-bottom-lg">QuickStart</h2>
+
+                <div class="home-quickstart-section">
+                    <h3 class="home-quickstart-number">1. </h3>
+                    <p class="home-quickstart-title"><a href="https://github.com/webbingstudio/clickit-js/archive/master.zip" target="_blank">Download</a></p>
+                </div><!-- /.home-quickstart-section -->
+
+                <div class="home-quickstart-section">
+                    <h3 class="home-quickstart-number">2. </h3>
+                    <p class="home-quickstart-title">Setup</p>
+                    <p>Upload <code>/js/clickit.js</code> in your site, or import in your webpack project</p>
+                </div><!-- /.home-quickstart-section -->
+
+                <div class="home-quickstart-section">
+                    <h3 class="home-quickstart-number">3. </h3>
+                    <p class="home-quickstart-title">Link Clickit.js</p>
+                    <pre class="language-markup"><code>&lt;script src="/path/to/js/clickit.js"&gt;&lt;/script&gt;</code></pre>
+                </div><!-- /.home-quickstart-section -->
+
+                <div class="home-quickstart-section">
+                    <h3 class="home-quickstart-number">4. </h3>
+                    <p class="home-quickstart-title">Markup</p>
+                    <h4 class="echo-title echo-title-style-a echo-title-level-6">Example 1: aria-controls (recommend)</h4>
+                    <pre class="language-markup"><code>&lt;button class="js-clickit my-trigger" aria-controls="my-menu"&gt;Menu&lt;/button&gt;
+. . .
+
+&lt;div id="my-menu" class="my-menu"&gt;
+    &lt;!-- opens and closes here --&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h4 class="echo-title echo-title-style-a echo-title-level-6">Example 2: anchor</h4>
+<pre class="language-markup"><code>&lt;a href="#my-menu" class="js-clickit my-trigger"&gt;Menu&lt;/a&gt;
+. . .
+
+&lt;div id="my-menu" class="my-menu"&gt;
+&lt;!-- opens and closes here --&gt;
+&lt;/div&gt;
+</code></pre>
+
+                </div><!-- /.home-quickstart-section -->
+
+                <div class="home-quickstart-section">
+                    <h3 class="home-quickstart-number">5. </h3>
+                    <p class="home-quickstart-title">Make instance and Init</p>
+                    <p><code>clickit</code> can be any variable name you like</p>
+                    <pre class="language-markup"><code>&lt;script&gt;
+const clickit = new ClickIt();
+clickit.init();
+&lt;/script&gt;</code></pre>
+
+                    <p class="echo-margin-top-lg">... If you want to customize more, read <a href="/#options">Options</a> and <a href="/#method">Method</a></p>
+
+                    <h4 class="echo-title echo-title-style-a echo-title-level-6">Example 1: Drawer menu</h4>
+                    <pre class="language-markup"><code>&lt;script&gt;
+const drawer = new ClickIt({
+    trigger: '.drawer',
+    sync: '.drawer-close-button'
+});
+drawer.init();
+&lt;/script&gt;</code></pre>
+
+                    <h4 class="echo-title echo-title-style-a echo-title-level-6 echo-margin-top-md">Example 2: Accordions</h4>
+                    <pre class="language-markup"><code>&lt;script&gt;
+const accordion = new ClickIt({
+    trigger: '.accordion-header',
+    height: true,
+    delay: 500
+});
+accordion.init();
+&lt;/script&gt;</code></pre>
+
+
+<h4 class="echo-title echo-title-style-a echo-title-level-6 echo-margin-top-md echo-margin-bottom-sm">Example 3: Cusom method</h4>
+<p>Global navigation on this site, automatically closes the menu when you click on a link, when you're on the home page (because it's an anchor that scroll in page).</p>
+<pre class="language-markup"><code>&lt;script&gt;
+const drawer = new ClickIt({
+    trigger: '.js-drawer',
+    delay: 500,
+    sync: '.js-drawer-close'
+});
+drawer.init();
+
+const navs = document.querySelectorAll('.drawer .echo-nav-label');
+if( navs ) {
+    navs.forEach( nav => {
+        nav.addEventListener( 'click', () => {
+            if( (window.location.pathname === '/')||(window.location.pathname === '/index.html') ) {
+                drawer.close();
+            }
+        });
+    })
+}
+&lt;/script&gt;</code></pre>
+
+
+                </div><!-- /.home-quickstart-section -->
+
+                <div class="home-quickstart-section">
+                    <h3 class="home-quickstart-number">6. </h3>
+                    <p class="home-quickstart-title">Decorate with CSS</p>
+                    <p>Here is the minimal CSS. the rest is your choice</p>
+                    <pre class="language-css"><code>.my-menu.js-clickit-ready {
+    /* After initialization */
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.my-menu[aria-hidden="false"] {
+    /* open */
+    height: auto;
+    opacity: 1;
+}
+
+.my-menu[aria-hidden="true"] {
+    /* close */
+}
+
+.my-menu.js-clickit-opening {
+    /* while open (require delay property) */
+}
+
+.my-menu.js-clickit-closing {
+    /* while close (require delay property) */
+}
+
+.my-trigger[aria-expanded="true"] {
+    /* open */
+    color: white;
+    background-color: blue;
+}
+
+.my-trigger[aria-expanded="false"] {
+    /* close */
+    color: blue;
+    background-color: silver;
+}</code></pre>
+                </div><!-- /.home-quickstart-section -->
+
+            </div><!-- /.echo-container -->
+        </section><!-- /.home-quickstart -->
+
+        <section id="demo" class="home-demo echo-padding-y-xl">
+            <div class="echo-container">
+                <p class="echo-text-center echo-margin-bottom-lg">Sorry, the rest content is only in Japanese.</p>
+
+                <h2 class="echo-title echo-title-style-b echo-title-level-2 echo-margin-bottom-lg">Demo</h2>
+
+                <div class="echo-buttons">
+                    <div class="echo-buttons-item">
+                        <a href="./modal.html" class="echo-button echo-button-style-a">モーダルポップアップ</a>
+                    </div><!-- /.echo-buttons-item -->
+                    <div class="echo-buttons-item">
+                        <a href="./hamburger.html" class="echo-button echo-button-style-a">ハンバーガーメニュー</a>
+                    </div><!-- /.echo-buttons-item -->
+                    <div class="echo-buttons-item">
+                        <a href="./tab.html" class="echo-button echo-button-style-a">タブ</a>
+                    </div><!-- /.echo-buttons-item -->
+                    <div class="echo-buttons-item">
+                        <a href="./accordion.html" class="echo-button echo-button-style-a">アコーディオン</a>
+                    </div><!-- /.echo-buttons-item -->
+                </div><!-- /.echo-buttons -->
+
+            </div><!-- /.echo-container -->
+        </section><!-- /.section -->
+
+        <section id="options" class="home-options echo-padding-y-xl">
+            <div class="echo-container echo-container-md">
+                <h2 class="echo-title echo-title-style-b echo-title-level-2">Options</h2>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">trigger</h3>
+                    <p>type: String / default: <code>.js-clickit</code></p>
+                    <p>トグルボタンなど、クリックイベントのトリガーとなる要素を、<strong>querySelectorで認識できる形式</strong>で指定します。トリガーには、<code>aria-controls</code>属性、もしくはa要素のアンカーが必須となります（展開される要素のIDとして扱います）。</p>
+                </article>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">sync</h3>
+                    <p>type: String / default: <code>null</code></p>
+                    <p>トリガーとなる要素と同じ動作をする要素（エイリアス）を、<strong>querySelectorで認識できる形式</strong>で指定します。</p>
+                </article>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">mode</h3>
+                    <p>type: String / default: <code>null</code></p>
+                    <p>(none): aria-control属性のみを制御します。</p>
+                    <p><code>popup</code>: 初期化したときに、トリガーにaria-haspopup属性を付与します。</p>
+                    <p><code>modal</code>: 初期化したときに、トリガーにaria-haspopup属性を付与します。また、展開される要素が開いたときにトリガーのフォーカスを外し、展開される要素にaria-modal属性、role=&quot;dialog&quot;を付与します。</p>
+                    <p><code>tab</code>: 初期化したときに、トリガーにaria-selected属性、role=&quot;tab&quot;を付与します。また、展開されるとき、選択したトリガーのaria-selected属性をtrueにしたうえで、他のタブをすべて閉じます。</p>
+                </article>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">delay</h3>
+                    <p>type: Number / default: <code>0</code></p>
+                    <p>展開される要素が開閉をはじめてから、設定したミリ秒の間だけ、各要素のaria属性の更新を待機します。待機中は、<code>openClass</code>プロパティ等で指定したアニメーションを補助するclassが付与されます。</p>
+                </article>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">openDelay</h3>
+                    <p>type: Number / default: <code>null</code></p>
+                    <p>展開される要素が開きはじめてから、設定したミリ秒の間だけ、各要素のaria属性の更新を待機します。待機中は、<code>delay</code>プロパティを上書きします。</p>
+                </article>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">closeDelay</h3>
+                    <p>type: Number / default: <code>null</code></p>
+                    <p>展開される要素が閉じはじめてから、設定したミリ秒の間だけ、各要素のaria属性の更新を待機します。待機中は、<code>delay</code>プロパティを上書きします。</p>
+                </article>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">height</h3>
+                    <p>type: boolean / default: <code>false</code></p>
+                    <p><code>true</code>を指定すると、展開される要素の高さをstyle属性で付与します。高さは、<strong>展開される要素の直下の子要素</strong>の高さを参照します。ウィンドウのサイズが変更されると、500ミリ秒ごとに再計算が行われます。</p>
+                </article>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">closeOther</h3>
+                    <p>type: boolean / default: <code>false</code></p>
+                    <p><code>true</code>を指定すると、要素が展開される都度、それ以外をすべて閉じます。<code>trigger</code>プロパティで指定した要素がひとつしかなかった場合は、何も起きません。</p>
+                </article>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">readyClass</h3>
+                    <p>type: String / default: <code>js-clickit-ready</code></p>
+                    <p>初期化が終了したときに、展開される要素に付与する<strong>class名</strong>を指定します。</p>
+                </article>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">openClass</h3>
+                    <p>type: String / default: <code>js-clickit-opening</code></p>
+                    <p>展開される要素が開きはじめてから、ARIA属性が書き換えられるまでの間（<code>delay</code>プロパティで指定したミリ秒）に、展開される要素に付与する<strong>class名</strong>を指定します。</p>
+                </article>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">closeClass</h3>
+                    <p>type: String / default: <code>js-clickit-closing</code></p>
+                    <p>展開される要素が閉じはじめてから、ARIA属性が書き換えられるまでの間（<code>delay</code>プロパティで指定したミリ秒）に、展開される要素に付与する<strong>class名</strong>を指定します。</p>
+                </article>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">lockClass</h3>
+                    <p>type: String / default: <code>js-clickit-lock</code></p>
+                    <p>展開される要素が開閉をはじめてから、ARIA属性が書き換えられるまでの間（<code>delay</code>プロパティで指定したミリ秒）に、トリガー、エイリアスの両方に付与する<strong>class名</strong>を指定します。このクラスが付与されている間はクリックイベントが無効になります。</p>
+                </article>
+
+
+            </div><!-- /.echo-container -->
+        </section><!-- /.home-options -->
+
+        <section id="method" class="home-method echo-padding-y-xl">
+            <div class="echo-container echo-container-md">
+                <h2 class="echo-title echo-title-style-b echo-title-level-2">Method</h2>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">init()</h3>
+                    <p>parameter = (none)</p>
+                    <p>インスタンスを作成したあと、すべてのクリックイベントが有効になるようセットアップします。複数回の実行や、再起動は想定していません。</p>
+                </article>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">open()</h3>
+                    <p>parameter = type: Number / default: <code>0</code></p>
+                    <p>（指定した数値）番目の要素を開きます。引数は0から数えるため、0がドキュメント内で最初に出現した要素となります。</p>
+                </article>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">close()</h3>
+                    <p>parameter = type: Number / default: <code>0</code></p>
+                    <p>（指定した数値）番目の要素を閉じます。引数は0から数えるため、0がドキュメント内で最初に出現した要素となります。</p>
+                </article>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">closeOther()</h3>
+                    <p>parameter = type: Number / default: <code>0</code></p>
+                    <p>（指定した数値）番目<strong>以外</strong>の要素を閉じます。引数は0から数えるため、0がドキュメント内で最初に出現した要素となります。</p>
+                </article>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">openAll()</h3>
+                    <p>parameter = (none)</p>
+                    <p>すべての要素を開きます。</p>
+                </article>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">closeAll()</h3>
+                    <p>parameter = (none)</p>
+                    <p>すべての要素を閉じます。</p>
+                </article>
+
+                <article class="echo-margin-top-lg">
+                    <h3 class="echo-title echo-title-style-a echo-title-level-4 echo-margin-bottom-md">setHeight()</h3>
+                    <p>parameter = type: Number / default: <code>0</code></p>
+                    <p>（指定した数値）番目<strong>以外</strong>の高さを再計算し、data属性を更新します。引数は0から数えるため、0がドキュメント内で最初に出現した要素となります。</p>
+                </article>
+
+            </div><!-- /.echo-container -->
+        </section><!-- /.section -->
+
+    </main><!-- /.echo-p-main -->
+
+    <footer class="footer echo-p-footer" role="contentinfo">
+
+        <nav class="echo-nav">
+            <ul class="echo-nav-list">
+                <li class="echo-nav-item"><a href="/" class="echo-nav-label">Home</a></li>
+                <li class="echo-nav-item"><a href="/#quickstart" class="echo-nav-label">QuickStart</a></li>
+                <li class="echo-nav-item"><a href="/#demo" class="echo-nav-label">Demo</a></li>
+                <li class="echo-nav-item"><a href="/#options" class="echo-nav-label">Options</a></li>
+                <li class="echo-nav-item"><a href="/#method" class="echo-nav-label">Method</a></li>
+            </ul><!-- /.echo-nav-list -->
+        </nav><!-- /.echo-nav -->
+
+        <div class="echo-text-sm echo-margin-top-lg">
+            <p class="echo-title echo-title-level-3 echo-title-style-a echo-margin-bottom-md">Clickit.js</p>
+            <p>Code licensed <a href="https://github.com/webbingstudio/clickit-js/blob/master/LICENSE" target="_blank" rel="license noopener">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>.</p>
+            <p>© 2022 <a href="https://webbingstudio.com/" target="_blank">webbingstudio.com</a></p>
+        </div>
+    
+    </footer><!-- /.echo-p-footer -->
+
+    <div id="globalnav" class="drawer echo-overlay echo-overlay-inverse" aria-hidden="true">
+        <div class="js-drawer-close echo-overlay-bg"></div>
+        <div class="echo-overlay-contents">
+    
+            <div class="echo-padding-sm">
+                <p class="echo-title echo-title-style-b echo-title-level-5">Menu</p>
+            </div>
+    
+            <nav class="echo-nav echo-nav-inverse echo-nav-lg echo-nav-vertical">
+                <ul class="echo-nav-list">
+                    <li class="echo-nav-item"><a href="/" class="echo-nav-label">Home</a></li>
+                    <li class="echo-nav-item"><a href="/#quickstart" class="echo-nav-label">QuickStart</a></li>
+                    <li class="echo-nav-item"><a href="/#demo" class="echo-nav-label">Demo</a></li>
+                    <li class="echo-nav-item"><a href="/#options" class="echo-nav-label">Options</a></li>
+                    <li class="echo-nav-item"><a href="/#method" class="echo-nav-label">Method</a></li>
+                </ul>
+            </nav>
+    
+            <div class="echo-text-center echo-margin-top-xl">
+                <button class="js-drawer-close echo-button echo-button-style-c">CLOSE</button>
+            </div>
+    
+        </div><!-- /.echo-overlay-contents -->
+    </div><!-- /.echo-overlay -->
+
+</div><!-- /.echo-document -->
+<script src="/js/bundle.js"></script>
+<script src="./prism/prism.js"></script>
+</body>
+</html>

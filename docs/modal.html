@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Clickit.js</title>
+
+    <link rel="stylesheet" href="https://echocss.webbingstudio.com/css/echo.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div id="echo-document">
+
+    <header class="echo-p-header" role="banner">
+        <div class="echo-container">
+
+            <h1 class="echo-title echo-title-style-b echo-title-level-2">clickit.js</h1>
+
+        </div><!-- /.echo-container -->
+    </header><!-- /.echo-p-header -->
+
+    <main class="echo-p-main" role="main">
+        <div class="echo-container echo-container-xs">
+            <h2 class="echo-title echo-title-style-d echo-title-level-5 echo-margin-bottom-lg">モーダルポップアップ</h2>
+
+            <div class="echo-body">
+                <p>シンプルなモーダルポップアップのサンプルです。</p>
+            </div>
+
+            <div class="echo-buttons echo-margin-y-xl">
+
+                <div class="echo-buttons-item">
+                    <button class="js-modal-01 echo-button echo-button-style-a" aria-controls="modal01">モーダル1を開く</a>
+                </div><!-- /.echo-buttons-item -->
+
+                <div class="echo-buttons-item">
+                    <button class="js-modal-02 echo-button echo-button-style-a" aria-controls="modal02">モーダル2を開く</a>
+                </div><!-- /.echo-buttons-item -->
+
+            </div><!-- /.echo-buttons -->
+
+        </div><!-- /.echo-container -->
+    </main><!-- /.echo-p-main -->
+
+<div id="modal01" class="modal-overlay echo-overlay echo-overlay-inverse" aria-hidden="true">
+    <div class="echo-overlay-bg"></div>
+    <div class="echo-overlay-contents">
+
+        <h3 class="echo-title echo-title-style-a echo-title-level-6 echo-margin-bottom-md">delay</h3>
+
+        <p>インスタンスを作成する際に<code>delay</code>プロパティに数値を指定すると、ミリ秒分だけARIA属性の変更を待機します。</p>
+
+        <p>待機中は、展開する要素に<code>.js-clickit-opening</code>または<code>.js-clickit-closeing</code>クラスが付与され、CSSアニメーションを補助します。また、<strong>待機中に連続クリックをしてもイベントを起こさない</strong>よう防止します。</p>
+
+        <p><code>delay</code>プロパティの初期値は<code>0</code>です（つまり、いきなり開閉します）。<br>
+        このモーダルポップアップは背景をクリックしても閉じることができますが、表示するアニメーションの途中でオーバーレイ背景をクリックしても何も起きないことを確認してください。</p>
+
+        <div class="echo-text-center echo-margin-top-xl">
+            <button class="js-modal-01-close echo-button echo-button-style-c">閉じる</button>
+        </div>
+
+    </div><!-- /.echo-overlay-contents -->
+</div><!-- /.echo-overlay -->
+
+<div id="modal02" class="modal-overlay echo-overlay echo-overlay-inverse" aria-hidden="true">
+    <div class="echo-overlay-bg"></div>
+    <div class="echo-overlay-contents">
+
+        <h3 class="echo-title echo-title-style-a echo-title-level-6 echo-margin-bottom-md">mode</h3>
+
+        <p>インスタンスを作成する際に<code>mode</code>プロパティに<code>popup</code>を指定すると、ポップアップとして扱い、トリガーに望ましいと思われるWAI-ARIA属性を付与します。</p>
+
+        <p><code>modal</code>を指定すると、モーダルとして扱い、モーダルが展開されている間、スクリーンリーダーがモーダル以外を無視するよう、望ましいと思われるWAI-ARIA属性を付与します。</p>
+
+        <p><code>tab</code>を指定すると、タブとして扱い、各トリガーに望ましいと思われるWAI-ARIA属性を付与します。</p>
+
+        <div class="echo-text-center echo-margin-top-xl">
+            <button class="js-modal-02-close echo-button echo-button-style-c">閉じる</button>
+        </div>
+
+    </div><!-- /.echo-overlay-contents -->
+</div><!-- /.echo-overlay -->
+
+</div><!-- /.echo-document -->
+<script src="/js/bundle.js"></script>
+</body>
+</html>

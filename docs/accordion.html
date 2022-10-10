@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Clickit.js</title>
+
+    <link rel="stylesheet" href="https://echocss.webbingstudio.com/css/echo.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div id="echo-document">
+
+    <header class="echo-p-header" role="banner">
+        <div class="echo-container">
+
+            <h1 class="echo-title echo-title-style-b echo-title-level-2">clickit.js</h1>
+
+        </div><!-- /.echo-container -->
+    </header><!-- /.echo-p-header -->
+
+    <main class="echo-p-main" role="main">
+        <div class="echo-container echo-container-xs">
+            <h2 class="echo-title echo-title-style-d echo-title-level-5 echo-margin-bottom-lg">アコーディオン</h2>
+
+            <section class="accordions">
+
+                <article class="accordions-item accordion">
+                    <div class="accordion-header">
+                        <h2 class="js-accordion echo-title echo-title-style-a echo-title-level-6" aria-controls="section01">複数のクリックイベント</h2>
+                    </div>
+                    <div id="section01" class="accordion-contents">
+                        <div class="echo-body accordion-body">
+                            <p>複数の<code>.js-accordion</code>が、アコーディオンとして動作するサンプルです。<br>
+                            <code>trigger</code>プロパティは複数の要素に対応しています。</p>
+                        </div>
+                    </div>
+                </article><!-- /.accordion -->
+
+                <article class="accordions-item accordion">
+                    <div class="accordion-header">
+                        <h2 class="echo-title echo-title-style-a echo-title-level-6"><a href="#section02" class="js-accordion">a要素のアンカー</a></h2>
+                    </div>
+                    <div id="section02" class="accordion-contents">
+                        <div class="echo-body accordion-body">
+                            <p>このアコーディオンだけは、トグルスイッチの<strong>a要素のアンカー</strong>を展開する要素として扱います。<br>
+                            （ないとは思いますが）aria-controls属性とアンカーで異なるIDが指定されていた場合は、aria-controls属性を優先します。</p>
+
+                            <p>a要素のアンカーを使用した場合は、クリック後にアドレスバーのURLにハッシュが追加されます（履歴が増えます）。これを避けたい場合はトグルスイッチをa要素でマークアップせず、見出し要素、button要素等を使用してください。</p>
+                        </div>
+                    </div>
+                </article><!-- /.accordion -->
+
+                <article class="accordions-item accordion">
+                    <div class="accordion-header">
+                        <h2 class="js-accordion echo-title echo-title-style-a echo-title-level-6" aria-controls="section03" aria-expanded="true">最初から展開させる</h2>
+                    </div>
+                    <div id="section03" class="accordion-contents">
+                        <div class="echo-body accordion-body">
+                            <p>トグルスイッチとなる要素に、事前に<code>aria-expanded="true"</code>を記述しておくと、最初から展開した状態となります。</p>
+                        </div>
+                    </div>
+                </article><!-- /.accordion -->
+
+                <article class="accordions-item accordion">
+                    <div class="accordion-header">
+                        <h2 class="js-accordion echo-title echo-title-style-a echo-title-level-6" aria-controls="section04">height</h2>
+                    </div>
+                    <div id="section04" class="accordion-contents">
+                        <div class="echo-body accordion-body">
+                            <p>アコーディオンの開閉で滑らかなCSSアニメーション効果を実現するには、コンテンツの高さをCSSで固定値にする必要があります（autoのままではアニメーションができません）。</p>
+                            <p>インスタンスを作成する際に<code>height</code>プロパティを<code>true</code>にすると、<code>delay</code>プロパティで設定したミリ秒の間だけ、展開する要素の高さをstyle属性で付与します。</p>
+                            <p>data-clickit-height の高さは、<strong>展開する要素の直下の子要素</strong>の高さを参照します（このサンプルでは<code>.accordion-body</code>の高さです）。</p>
+                        </div>
+                    </div>
+                </article><!-- /.accordion -->
+
+            </section><!-- /.accordions -->
+
+            <div class="echo-buttons echo-margin-top-xl">
+
+                <div class="echo-buttons-item">
+                    <a href="./" class="echo-button echo-button-style-b echo-button-icon-arrow echo-button-icon-left">戻る</a>
+                </div><!-- /.echo-buttons-item -->
+
+            </div><!-- /.echo-buttons -->
+    
+        </div><!-- /.echo-container -->
+    </main><!-- /.echo-p-main -->
+
+
+</div><!-- /.echo-document -->
+<script src="/js/bundle.js"></script>
+</body>
+</html>
