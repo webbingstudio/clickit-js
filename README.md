@@ -8,9 +8,9 @@ http://opensource.org/licenses/MIT
 
 ----
 
-Clickit.js is a simple library. Implements the process of "rewriting the class attribute when clicked".
+ClickIt.js is a simple library. Implements the process of "rewriting the class attribute when clicked".
 
-Clickit.js（クリックイットジェーエス）は「クリックするとclass属性を書き換える」処理を実装できるシンプルなライブラリです。
+ClickIt.js（クリックイットジェーエス）は「クリックするとclass属性を書き換える」処理を実装できるシンプルなライブラリです。
 
 - Native JavaScript (Vanilla JS)
 - WAI-ARIA support
@@ -28,7 +28,7 @@ https://webbingstudio.github.io/clickit-js/
 
 Upload ```clickit.js``` in your site, or import in your webpack project.
 
-### Link Clickit.js
+### Link ClickIt.js
 
 ```html
 <script src="/path/to/js/clickit.js"></script>
