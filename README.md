@@ -65,7 +65,10 @@ Upload ```clickit.js``` in your site, or import in your webpack project.
 ```html
 <script>
 const clickit = new ClickIt();
-clickit.init();
+
+window.addEventListener('DOMContentLoaded', () => {
+    clickit.init();
+});
 </script>
 ```
 
@@ -79,7 +82,10 @@ const drawer = new ClickIt({
     trigger: '.drawer',
     sync: '.drawer-close-button'
 });
-drawer.init();
+
+window.addEventListener('DOMContentLoaded', () => {
+    drawer.init();
+});
 </script>
 ```
 
@@ -92,11 +98,44 @@ const accordion = new ClickIt({
     height: true,
     delay: 500
 });
-accordion.init();
+
+window.addEventListener('DOMContentLoaded', () => {
+    accordion.init();
+});
 </script>
 ```
 
-#### Example 3: Cusom method
+#### Example 3: Modal popup
+
+```html
+<script>
+const modal = new ClickIt({
+    mode: 'modal',
+    openDelay: 1000,
+    closeDelay: 500
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    modal.init();
+});
+</script>
+```
+
+#### Example 4: Tabs
+
+```html
+<script>
+const tabs = new ClickIt({
+    mode: 'tab'
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    tabs.init();
+});
+</script>
+```
+
+#### Example 5: Cusom method
 
 Global navigation on [docs](https://webbingstudio.github.io/clickit-js/), automatically closes the menu when you click on a link, when you're on the home page (because it's an anchor that scroll in page).
 
@@ -107,18 +146,21 @@ const drawer = new ClickIt({
     delay: 500,
     sync: '.js-drawer-close'
 });
-drawer.init();
 
-const navs = document.querySelectorAll('.drawer .echo-nav-label');
-if( navs ) {
-    navs.forEach( nav => {
-        nav.addEventListener( 'click', () => {
-            if( (window.location.pathname === '/')||(window.location.pathname === '/index.html') ) {
-                drawer.close();
-            }
-        });
-    })
-}
+window.addEventListener('DOMContentLoaded', () => {
+    drawer.init();
+
+    const navs = document.querySelectorAll('.drawer .echo-nav-label');
+    if( navs ) {
+        navs.forEach( nav => {
+            nav.addEventListener( 'click', () => {
+                if( (window.location.pathname === '/')||(window.location.pathname.indexOf('/index.html')) ) {
+                    drawer.close();
+                }
+            });
+        })
+    }
+});
 </script>
 ```
 
