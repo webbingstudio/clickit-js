@@ -69,7 +69,7 @@ clickit.init();
 </script>
 ```
 
-... If you want to customize more, read [Options](https://webbingstudio.github.io/#options) and [Method](https://webbingstudio.github.io/#method)
+... If you want to customize more, read [Options](https://webbingstudio.github.io/clickit-js/#options) and [Method](https://webbingstudio.github.io/clickit-js/#method)
 
 #### Example 1: Drawer menu
 
@@ -98,7 +98,7 @@ accordion.init();
 
 #### Example 3: Cusom method
 
-Global navigation on [docs](https://webbingstudio.github.io/), automatically closes the menu when you click on a link, when you're on the home page (because it's an anchor that scroll in page).
+Global navigation on [docs](https://webbingstudio.github.io/clickit-js/), automatically closes the menu when you click on a link, when you're on the home page (because it's an anchor that scroll in page).
 
 ```html
 <script>
