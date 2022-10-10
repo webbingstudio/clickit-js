@@ -1,3 +1,15 @@
+/*!
+ * ClickIt.js v1.0.0
+ * Clickit.js is a simple library. Implements the process of "rewriting the class attribute when clicked".
+ * 
+ * https://github.com/webbingstudio/clickit-js
+ * https://webbingstudio.github.io/clickit-js/
+ * 
+ * Copyright 2022 WebbingStudio
+ * Released under the MIT license
+ * https://opensource.org/licenses/MIT
+ */
+
 class ClickIt {
 
   constructor(options) {
