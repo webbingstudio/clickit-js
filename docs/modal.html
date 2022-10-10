@@ -16,7 +16,7 @@
     <header class="echo-p-header" role="banner">
         <div class="echo-container">
 
-            <h1 class="echo-title echo-title-style-b echo-title-level-2">clickit.js</h1>
+            <h1 class="echo-title echo-title-style-b echo-title-level-2">ClickIt.js</h1>
 
         </div><!-- /.echo-container -->
     </header><!-- /.echo-p-header -->
@@ -54,8 +54,7 @@
 
         <p>待機中は、展開する要素に<code>.js-clickit-opening</code>または<code>.js-clickit-closeing</code>クラスが付与され、CSSアニメーションを補助します。また、<strong>待機中に連続クリックをしてもイベントを起こさない</strong>よう防止します。</p>
 
-        <p><code>delay</code>プロパティの初期値は<code>0</code>です（つまり、いきなり開閉します）。<br>
-        このモーダルポップアップは背景をクリックしても閉じることができますが、表示するアニメーションの途中でオーバーレイ背景をクリックしても何も起きないことを確認してください。</p>
+        <p><code>delay</code>プロパティの初期値は<code>0</code>です（いきなり開閉します）。</p>
 
         <div class="echo-text-center echo-margin-top-xl">
             <button class="js-modal-01-close echo-button echo-button-style-c">閉じる</button>
@@ -84,6 +83,27 @@
 </div><!-- /.echo-overlay -->
 
 </div><!-- /.echo-document -->
-<script src="./js/bundle.js"></script>
+<script src="./js/clickit.js"></script>
+<script>
+const modal01 = new ClickIt({
+    trigger: '.js-modal-01',
+    mode: 'modal',
+    openDelay: 1000,
+    closeDelay: 500,
+    sync: '.js-modal-01-close'
+});
+const modal02 = new ClickIt({
+    trigger: '.js-modal-02',
+    mode: 'modal',
+    openDelay: 1000,
+    closeDelay: 500,
+    sync: '.js-modal-02-close'
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    modal01.init();
+    modal02.init();
+});
+</script>
 </body>
 </html>

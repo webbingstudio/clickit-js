@@ -16,7 +16,7 @@
     <header class="echo-p-header" role="banner">
         <div class="echo-container">
 
-            <h1 class="echo-title echo-title-style-b echo-title-level-2">clickit.js</h1>
+            <h1 class="echo-title echo-title-style-b echo-title-level-2">ClickIt.js</h1>
 
         </div><!-- /.echo-container -->
     </header><!-- /.echo-p-header -->
@@ -82,6 +82,17 @@
             <div class="echo-buttons echo-margin-top-xl">
 
                 <div class="echo-buttons-item">
+                    <button onclick="accordion.openAll()" class="echo-button echo-button-style-b">すべて開く</button>
+                </div><!-- /.echo-buttons-item -->
+                <div class="echo-buttons-item">
+                    <button onclick="accordion.closeAll()" class="echo-button echo-button-style-b">すべて閉じる</button>
+                </div><!-- /.echo-buttons-item -->
+
+            </div><!-- /.echo-buttons -->
+
+            <div class="echo-buttons echo-margin-top-xl">
+
+                <div class="echo-buttons-item">
                     <a href="./" class="echo-button echo-button-style-b echo-button-icon-arrow echo-button-icon-left">戻る</a>
                 </div><!-- /.echo-buttons-item -->
 
@@ -92,6 +103,17 @@
 
 
 </div><!-- /.echo-document -->
-<script src="./js/bundle.js"></script>
+<script src="./js/clickit.js"></script>
+<script>
+const accordion = new ClickIt({
+    trigger: '.js-accordion',
+    height: true,
+    delay: 500
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    accordion.init();
+});
+</script>
 </body>
 </html>

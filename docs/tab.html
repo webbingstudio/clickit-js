@@ -16,7 +16,7 @@
     <header class="echo-p-header" role="banner">
         <div class="echo-container">
 
-            <h1 class="echo-title echo-title-style-b echo-title-level-2">clickit.js</h1>
+            <h1 class="echo-title echo-title-style-b echo-title-level-2">ClickIt.js</h1>
 
         </div><!-- /.echo-container -->
     </header><!-- /.echo-p-header -->
@@ -72,6 +72,17 @@
 
 
 </div><!-- /.echo-document -->
-<script src="./js/bundle.js"></script>
+<script src="./js/clickit.js"></script>
+<script>
+const tabs = new ClickIt({
+  trigger: '.js-tab',
+  delay: 500,
+  mode: 'tab'
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    tabs.init();
+});
+</script>
 </body>
 </html>

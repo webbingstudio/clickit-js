@@ -16,7 +16,7 @@
     <header class="echo-p-header" role="banner">
         <div class="echo-container">
 
-            <h1 class="echo-title echo-title-style-b echo-title-level-2">clickit.js</h1>
+            <h1 class="echo-title echo-title-style-b echo-title-level-2">ClickIt.js</h1>
 
         </div><!-- /.echo-container -->
     </header><!-- /.echo-p-header -->
@@ -51,7 +51,7 @@
 
             <h3 class="echo-title echo-title-style-a echo-title-level-6 echo-margin-top-lg echo-margin-bottom-md">openDelay, closeDelay</h3>
 
-            <p>開くときと閉じるときで待機時間を変えることもできます。右のメニューは開閉にかかる時間が異なることを確認してください。</p>
+            <p>開くときと閉じるときで待機時間を変えることもできます。右のメニューはアニメーションの時間が異なることや、アニメーションの途中で背景を再度クリックしても何も起こらないことを確認してください。</p>
     
         </div><!-- /.echo-container -->
 
@@ -154,6 +154,23 @@
 </div><!-- /.echo-overlay -->
 
 </div><!-- /.echo-document -->
-<script src="./js/bundle.js"></script>
+<script src="./js/clickit.js"></script>
+<script>
+const hamburger01 = new ClickIt({
+    trigger: '.js-hamburger-left',
+    sync: '.js-hamburger-left-close'
+});
+const hamburger02 = new ClickIt({
+    trigger: '.js-hamburger-right',
+    sync: '.js-hamburger-right-close',
+    openDelay: 2000,
+    closeDelay: 500
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    hamburger01.init();
+    hamburger02.init();
+});
+</script>
 </body>
 </html>
