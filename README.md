@@ -347,4 +347,5 @@ parameter = type: Number / default: ```0```
 
 © 2022 webbingstudio.com
 
+
 // For a moment, but like a flash
